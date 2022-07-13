@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move-IT</title>
+    <link rel="icon" href="/imagenes/Logo.ico">
+    <link rel= "stylesheet" href="/css/estilos.css">   
+    <script src="/js/clases.js"></script>
+    <script src="/js/codigo.js"></script>
+</head>
+<body>
+    <div id="contenedor">
+        <div id="cabezal" class="clearfix">
+          <img id="logo" src="/imagenes/Logo.jpeg" alt="logo">
+          <div id="NavPrincipal">
+            <!--Navegacion principal Administrador-->
+            <ul id="navPrincipalAdministrador">            
+              <li id="mnuHabDeshabEmpresa">
+                <a>Habilitar/deshabilitar empresa</a>
+              </li>
+              <li id="mnuCrearVehiculo">
+                <a>Crear tipo de vehículo</a>
+              </li>
+              <li id="mnuInfoEstadisticaAdmin">
+                <a>Información estadistica</a>
+              </li>
+              <li id="mnuCerrarSesionA">
+                <a>Cerrar Sesión</a>
+              </li>
+            </ul>
+
+            <!--Navegacion principal Persona-->
+            <ul id="navPrincipalPersona">
+              <li id="mnuRegistrarEnvio">
+                <a>Solicitud de envio</a>
+              </li>
+              <li id="mnuListadoEnviosPersona">
+                <a>Listado de envio</a>
+              </li>
+              <li id="mnuInfoEstadisticaPers">
+                <a>Información estadistica</a>
+              </li>
+              <li id="mnuCerrarSesionP">
+                <a>Cerrar Sesión</a>
+              </li>
+            </ul>
+
+            <!--Navegación principal Empresa-->
+            <ul id="navPrincipalEmpresa">
+              <li id="solicitudesEnvioPendientes">
+              <a>Solicitudes de envio pendientes</a>
+            </li>
+            <li id="soliditudesTomadas">
+              <a>Solicitudes Tomadas</a>
+            </li>
+            <li id="mnuInfoEstadisticaEmp">
+              <a>Información estadistica</a>
+            </li>
+              <li id="mnuCerrarSesionE">
+                <a>Cerrar Sesión</a>
+              </li>      
+            </ul>
+          </div>
+         
+          <div id="aux">
+            <a id="mnuIniciarSesion">Iniciar Sesión</a> | <a id="mnuRegistrarse">Registrarse</a>
+          </div><!-- FIN AUX -->
+        </div><!-- FIN CABEZAL -->
+        <div id="contenido">
+          <div id="bienvenida">
+            <img src="/imagenes/bienvenida.jpeg" alt="imgBienvenida">
+          </div>
+          <!--código para hacer LOGIN-->
+          <div id="login">
+            <h3>Login</h3>
+            <label for="txtUsuarioLogin">Ingrese Usuario:</label><br>
+            <input type="text" id="txtUsuarioLogin"><br>
+            <label for="txtPasswordLogin">Ingrese Contraseña:</label><br>
+            <input type="password" id="txtPasswordLogin"><br><br>
+            <input type="button" value="Ingresar" id="btnHacerLogin"><br>
+            <p id="mensajesLogin"></p>
+          </div> 
+          <!--código para el REGISTRO-->
+          <div id="opcionRegistro">
+            <h3>Registrarse</h3>
+            <h5>Elija una opción:</h5>
+            <input type="button" value="Soy una persona" id="btnSoyPersona"><br><br>
+            <input type="button" value="Soy una empresa" id="btnSoyEmpresa"><br><br>
+          </div>
+            <!--Opciones de registro-->
+
+          <div id="registroPersona">
+            <h3>Registro Persona</h3>
+            <label for="documentoID"><strong>Documento de identidad</strong></label><br>
+            <input type="number" id="documentoIdentidad"><br>
+            <label for="nombrePersona"><strong>Nombre</strong></label><br>
+            <input type="text" id="nombrePersona"><br>
+            <label for="apellidoPersona"><strong>Apellido</strong></label><br>
+            <input type="text" id="apellidoPersona"><br>
+            <label for="nombreUsuario"><strong>Nombre de Usuario</strong></label><br>
+            <input type="text" id="nombreUsuarioPersona"><br>
+            <label for="contraseña"><strong>Contraseña</strong></label><br>
+            <input type="password" id="contraseñaPersona"><br><br>
+            <input type="button" value="Registrarme" id="btnRegistroPersona">
+            <p id="mensajePersona"></p>
+            
+          </div>
+          <div id="registroEmpresa">
+            <h3>Registro Empresa</h3>
+            <label for="nroRUT"><strong>Numero de RUT</strong></label><br>
+            <input type="number" id="nroRUT"><br>
+            <label for="razónSocial"><strong> Razón Social</strong></label><br>
+            <input type="text" id="razonSocial"><br>
+            <label for="nombreFantasía"><strong> Nombre de Fantasía</strong></label><br>
+            <input type="text" id="nombreFantasia"><br>
+            <label for="vehiculo"><strong>Tipo de vehículo</strong></label><br>
+            <select  id="vehiculoTipo"></select><br>
+            <label for="nombreUsuario"><strong>Nombre de Usuario</strong></label><br>
+            <input type="text" id="nombreUsuarioEmpresa"><br>
+            <label for="contraseña"><strong>Contraseña</strong></label><br>
+            <input type="password" id="contraseñaEmpresa"><br><br>
+            <input type="button" value="Registrarme" id="btnRegistroEmpresa">
+            <p id="mensajeEmpresa"></p>
+            
+          </div>
+          <!--Registro de envio--> 
+          <div id="altaEnvio">  
+            <h3>Registrar Envío</h3>
+            <label for="txtTipoVehiculo">Tipo de vehiculo</label>
+            <select id="txtTipoVehiculo">            
+            </select><br>
+            <label for="txtDistancia">Distancia (en Km)</label>
+            <input type="number" id="txtDistancia"><br>
+            <label for="txtDescripcion">Ingrese descripción</label>
+            <textarea  id="txtDescripcion"></textarea><br>
+            <label for="txtImagen">Seleccione imagen</label>
+            <input type="file" id="txtImagen"><br>
+            <input type="button" value="Guardar" id="btnGuardarEnvio">
+            <p id="mensajesEnvio"></p>
+          </div>
+          <!--Lista de envios usuario Persona-->
+          <div id="listaEnvios">
+            <h3>Mis Envíos</h3>
+            <div id="listaEnviosPersona"></div>
+            <p id="mensajesListaEnviosPersona"></p>
+          </div>
+          <!--Habilitar y deshabilitar empresa y su buscador-->
+          <div id="buscadorEmpresa">
+            <label for="txtbuscaEmpresa">Ingrese razón social o nombre de la empresa</label>
+            <input type="text" id="txtbuscaEmpresa" placeholder="Buscar empresa">
+          </div>
+          <div id="habilitarDeshabilitarEmpresa">
+            
+            <h3>Habilitar y Deshabilitar Empresas</h3>
+            <table border="1" id="listaEmpresas"></table>
+            <p id="msjHabDeshabEmpresa"></p>
+          </div>
+          <!--Crear tipos de vehiculos-->
+          <div id="listaVehiculos">
+          <h3>Vehiculos existentes</h3>
+          <table border="1" id="tableListaVehiculos"></table><br><br>
+          <h3>Agregar nuevoVehiculo</h3>
+          <label for="ingresarNuevoVehiculo">Ingresar nuevo tipo de Vehiculo</label><br>
+          <input type="text" id="nuevoVehiculo"><br><br>
+          <input type="button" value="Ingresar Vehiculo" id="btnIngresarVehiculo"><br>
+          <p id="msjListaVehiculos"></p>
+          </div>
+
+          <!--Solicitud de envio pendiente-->
+          <div id="solicitudEnvioPendiente">
+            <h3>Solicitud de envios pendientes</h3>
+                      
+          </div>
+           <!--Solicitudes de envio tomadas-->
+           <div id="solicitudEnviosTomados">
+            <h3>Solicitudes de envios tomadas</h3>
+                      
+          </div>
+
+          <!--Estadisticas-->
+          <div id="estadisticasAdmin">
+            <h3>Total de kilometros recorridos por cada empresa</h3>
+          <div id="listaEmpresas2">
+          </div>       
+          </div>
+          
+          <div id="estadisticasPersona">
+           <p id="porcentaje"></p>
+           <p id="pendientes"></p>
+           <p id="enTransito"></p>
+           <p id="finalizado"></p>
+          </div>
+          
+          <div id="estadisticasEmpresa">
+           <p id="conMasEnvios"></p>
+           <select id="estado" onchange="comboAutomatico(this)">
+             <option value="EnTransito">En Transito</option>
+             <option value="Finalizado">Finalizado</option>
+           </select>
+           <p id="cantidadEnvios"></p>
+          </div>
+          <hr>
+         
+            <!--FIN EJERCICIOS-->
+            
+        </div><!-- FIN CONTENIDO -->
+          
+          <div id="pie">
+            <a href="https://www.ort.edu.uy">Para más información ingrese aquí.</a>
+          </div><!-- FIN PIE -->
+        </div><!-- FIN CONTENEDOR -->
+
+</body>
+</html>
